@@ -15,7 +15,7 @@
 }
 
 .header p {
-  opacity: 0.7;
+  opacity: 1; /*不透明度*/
   line-height: 1.5;
 }
 
@@ -30,7 +30,7 @@
   border-bottom: 3px dotted white;
   text-transform: uppercase;
   font-size: 15px;
-  opacity: 0.6;
+  opacity: 1;
   letter-spacing: 0.5px;
 }
 

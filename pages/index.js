@@ -11,7 +11,7 @@ export default function Home({ posts }) {
     <div>
       <Head>
         <title>Test</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" /> {/* faviconの設定*/}
       </Head>
 
       <main className={styles.container}>
@@ -26,13 +26,13 @@ export default function Home({ posts }) {
         <ol className={styles.posts}>
           {posts.map((post) => {
             const date = new Date(post.last_edited_time).toLocaleString(
-              "en-US",
+              "ja-JP",
               {
                 month: "short",
                 day: "2-digit",
                 year: "numeric",
               }
-            );
+            ); {/* 日付の形式を整える。ja-JP->日本語を指定*/}
             return (
               <li key={post.id} className={styles.post}>
                 <h3 className={styles.postTitle}>
