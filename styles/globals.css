@@ -7,8 +7,8 @@ body {
 }
 
 body {
-  background-color: white;
-  color: black;
+  background-color:white;
+  color: #101a36;
 }
 
 @media (prefers-color-scheme: dark) {
