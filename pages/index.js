@@ -45,7 +45,7 @@ export default function Home({ posts }) {
 
                 <p className={styles.postDescription}>{date}</p>
                 <Link href={`/${post.id}`}>
-                  <a> Read post →</a>
+                  <a> Check→</a>
                 </Link>
               </li>
             );
