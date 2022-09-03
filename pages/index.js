@@ -10,13 +10,13 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>TestPage</title>
+        <title>Test</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.container}>
         <header className={styles.header}>
-          <h1>TestPage</h1>
+          <h1>Test</h1>
           <p>
             Under construction...
           </p>
