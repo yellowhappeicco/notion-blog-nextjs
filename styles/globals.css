@@ -7,14 +7,14 @@ body {
 }
 
 body {
-  background-color:white;
-  color: #101a36;
+  background-color:#101a36;
+  color: white;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: rgb(24, 24, 31);
-    color: rgb(238, 238, 238);
+    background-color: #101a36;
+    color: white;
   }
 }
 

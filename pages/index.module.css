@@ -27,7 +27,7 @@
 .heading {
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #dedede;
+  border-bottom: 3px dotted white;
   text-transform: uppercase;
   font-size: 15px;
   opacity: 0.6;
@@ -36,7 +36,7 @@
 
 @media (prefers-color-scheme: dark) {
   .heading {
-    border-color: #343539;
+    border-color: white;
   }
 }
 
@@ -56,7 +56,7 @@
 }
 
 .postTitle a {
-  color: inherit;
+  color: inherit; /*postTitleはglobal.cssで指定した色に従う*/
 }
 
 .postDescription {
