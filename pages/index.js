@@ -3,13 +3,12 @@ import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
-import { GA_ID } from "../lib/gtag";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <><div>
       <Head>
         <title>Test</title>
         <link rel="icon" href="/favicon.ico" /> {/* faviconの設定*/}
