@@ -9,32 +9,21 @@ export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <><div>
       <Head>
         <title>Test</title>
         <link rel="icon" href="/favicon.ico" /> {/* faviconの設定*/}
-        {GA_ID != null && (
-          <>
-            <script
-              async
-              src ={`https://www.googletagmanager.com/gtag/js?is=${GA_ID}`}
-            />
-              <script
-                dangerouslySetInnerHTML={{
-                  _html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.pusu(arguments);}
-                  gtag('js', newDate());
-                  gtag('config', '${GA_ID}',{
-                    page_path: window.logation.pathname,  
-                  });`,
-                }}
-              />
-            </>
-        )}
-      </Head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id={GA_ID}`}/>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
 
-      <main className={styles.container}>
+          gtag('config', '${GA_ID}');
+        </script>
+    </Head>
+    
+    <main className={styles.container}>
         <header className={styles.header}>
           <h1>Test</h1>
           <p>
@@ -52,7 +41,7 @@ export default function Home({ posts }) {
                 day: "2-digit",
                 year: "numeric",
               }
-            ); {/* 日付の形式を整える。ja-JP->日本語を指定*/}
+            ); { /* 日付の形式を整える。ja-JP->日本語を指定*/ }
             return (
               <li key={post.id} className={styles.post}>
                 <h3 className={styles.postTitle}>
@@ -71,7 +60,7 @@ export default function Home({ posts }) {
             );
           })}
         </ol>
-      </main>
+      </main></>
     </div>
   );
 }
