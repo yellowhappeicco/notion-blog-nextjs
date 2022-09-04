@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import { Text } from "./[id].js";
 import styles from "./index.module.css";
+import { GA_ID } from "../lib/gtag";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -12,6 +13,25 @@ export default function Home({ posts }) {
       <Head>
         <title>Test</title>
         <link rel="icon" href="/favicon.ico" /> {/* faviconの設定*/}
+        {GA_ID != null && (
+          <>
+            <script
+              async
+              src ={`https://www.googletagmanager.com/gtag/js?is=${GA_ID}`}
+            />
+              <script
+                dangerouslySetInnerHTML={{
+                  _html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.pusu(arguments);}
+                  gtag('js', newDate());
+                  gtag('config', '${GA_ID}',{
+                    page_path: window.logation.pathname,  
+                  });`,
+                }}
+              />
+            </>
+        )}
       </Head>
 
       <main className={styles.container}>
