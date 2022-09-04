@@ -8,7 +8,7 @@ export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
   return (
-    <><div>
+    <div>
       <Head>
         <title>Test</title>
         <link rel="icon" href="/favicon.ico" /> {/* faviconの設定*/}
