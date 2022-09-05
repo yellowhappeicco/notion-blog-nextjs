@@ -38,7 +38,7 @@
 
 .code {
   font-family: monospace;
-  background-color: rgb(242, 242, 242);
+  background-color: gray;
   padding: 2px 4px;
   border-radius: 2px;
 }
