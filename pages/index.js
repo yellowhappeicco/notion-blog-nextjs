@@ -10,16 +10,13 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>Test</title>
+        <title>briedge</title>
         <link rel="icon" href="/favicon.ico" /> {/* faviconの設定*/}
     </Head>
     
     <main className={styles.container}>
         <header className={styles.header}>
-          <h1>Test</h1>
-          <p>
-            Under construction...
-          </p>
+          <h1>Briedge</h1>
         </header>
 
         <h2 className={styles.heading}>LIST</h2>
