@@ -1,7 +1,16 @@
 import "../styles/globals.css";
+import React from 'react'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+import GoogleAnalytics from '../src/components/GoogleAnalytics'
+
+const App = ({ Component, pageProps }) => {
+  return (
+    <>
+      <GoogleAnalytics />
+
+      <Component {...pageProps} />
+    </>
+  )
 }
 
-export default MyApp;
+export default App

@@ -37,6 +37,7 @@
 }
 
 .code {
+  font: white;
   font-family: monospace;
   background-color: gray;
   padding: 2px 4px;
@@ -48,7 +49,7 @@
 }
 
 .pre {
-  background-color: rgb(242, 242, 242);
+  background-color: red;
   padding: 2px 4px;
   margin: 20px 0;
   line-height: 2.3;
@@ -57,6 +58,8 @@
 }
 
 .code_block {
+  font: white;
+  background-color: gray;
   padding: 20px;
   font-family: monospace;
   display: flex;
@@ -97,7 +100,7 @@
 
 @media (prefers-color-scheme: dark) {
   .code {
-    background-color: rgb(15, 8, 28);
+    background-color:gray;
   }
   .file:hover {
     background: rgba(255, 255, 255, 0.1);
