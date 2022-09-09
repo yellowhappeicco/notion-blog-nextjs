@@ -4,7 +4,7 @@ import "../styles/globals.css"; // 全ページにglobl.cssに書いたスタイ
 import Head from "next/head";
 import React from 'react'
 
-import { GA_ID, existsGaId } from '../src/lib/gtag'
+import { GA_ID, existsGaId } from '../lib/gtag'
 
 const App = ({ Component, pageProps }) => {
   return (
