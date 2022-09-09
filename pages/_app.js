@@ -4,8 +4,9 @@ import "../styles/globals.css"; // 全ページにglobl.cssに書いたスタイ
 import Head from "next/head";
 import React from 'react'
 
-import { GA_ID, existsGaId } from '../lib/gtag'
+import { GA_ID, existsGaId } from '../lib/gtag' // gtag.jsからGA_IDとexsitsGaIdをインポートする
 
+// 全ページのHead内にGAタグを必ず埋め込む。
 const App = ({ Component, pageProps }) => {
   return (
     <>
