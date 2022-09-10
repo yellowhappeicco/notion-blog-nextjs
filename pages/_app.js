@@ -1,38 +1,23 @@
 // このファイルの中に書かれていることが全ページに適用される
 import "../styles/globals.css"; // 全ページにglobl.cssに書いたスタイルが適用されます
 
-import Head from "next/head";
-import React from 'react'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import * as gtag from '../lib/gtag'
 
-import { GA_ID, existsGaId } from '../lib/gtag' // gtag.jsからGA_IDとexsitsGaIdをインポートする
+function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
-// 全ページのHead内にGAタグを必ず埋め込む。
-const App = ({ Component, pageProps }) => {
-  return (
-    <>
-      <Head>
-        {/* Google Analytics */}
-        {existsGaId && (
-          <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${GA_ID}', {
-                    page_path: window.location.pathname,
-                  });`,
-              }}
-            />
-          </>
-        )}
-      </Head>
-
-      <Component {...pageProps} />
-    </>
-  )
+  return <Component {...pageProps} />
 }
 
-export default App
+export default MyApp
